@@ -66,6 +66,8 @@ begin
 //console.log('Passou aki 1');
 
 //parent.postMessage("Teste do David", "*");
+
+//https://html.spec.whatwg.org/multipage/web-messaging.html#web-messaging
 end;
 
 initialization
