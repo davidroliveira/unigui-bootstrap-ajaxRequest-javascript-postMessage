@@ -44,6 +44,7 @@ end;
 procedure TMainForm.UniLabel1AjaxEvent(Sender: TComponent; EventName: string;
   Params: TUniStrings);
 begin
+  ShowMessage('Mensagem Delphi');
 //window.ajaxRequest(MainForm.UniHTMLFrame1, 'myclickevent', [], false);
 //window.ajaxRequest(MainForm.UniLabel1, 'myclickevent', [], false);
 
