@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/05/28 14:35:03.000.660,=C:\Users\david\Desktop\TesteUnigui\ServerModule.pas</Transaction>
+    <Transaction>2019/05/28 14:35:03.000.730,=C:\Users\david\Desktop\TesteUnigui\MainModule.pas</Transaction>
+    <Transaction>2019/05/28 14:35:19.000.061,=C:\Users\david\Desktop\TesteUnigui\Main.pas</Transaction>
+    <Transaction>2019/05/29 11:41:44.340,=C:\Users\david\Desktop\TesteUnigui\Unit1.pas</Transaction>
+    <Transaction>2019/05/29 11:42:12.991,C:\Users\david\Desktop\TesteUnigui\Login.dfm=C:\Users\david\Desktop\TesteUnigui\Unit1.dfm</Transaction>
+    <Transaction>2019/05/29 11:42:12.991,C:\Users\david\Desktop\TesteUnigui\Login.pas=C:\Users\david\Desktop\TesteUnigui\Unit1.pas</Transaction>
+    <Transaction>2019/05/29 15:19:19.230,C:\Users\david\Desktop\TesteUnigui\Login.pas=</Transaction>
+  </Transactions>
+</BorlandProject>
