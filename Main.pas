@@ -10,13 +10,12 @@ uses
 
 type
   TMainForm = class(TUniForm)
-    UniLabel1: TUniLabel;
-    procedure UniLabel1AjaxEvent(Sender: TComponent; EventName: string;
-      Params: TUniStrings);
-    procedure UniFormAjaxEvent(Sender: TComponent; EventName: string;
+    LbFmePrincipal: TUniLabel;
+    procedure LbFmePrincipalAjaxEvent(Sender: TComponent; EventName: string;
       Params: TUniStrings);
   private
     { Private declarations }
+    procedure EfetuarLogin(const psLogin, psSenha: string);
   public
     { Public declarations }
   end;
@@ -28,23 +27,44 @@ implementation
 {$R *.dfm}
 
 uses
-  uniGUIVars, MainModule, uniGUIApplication;
+  uniGUIVars, MainModule, uniGUIApplication, System.Rtti;
 
 function MainForm: TMainForm;
 begin
   Result := TMainForm(UniMainModule.GetFormInstance(TMainForm));
 end;
 
-procedure TMainForm.UniFormAjaxEvent(Sender: TComponent; EventName: string;
-  Params: TUniStrings);
+procedure TMainForm.EfetuarLogin(const psLogin, psSenha: string);
 begin
-//
+  if (psLogin.ToUpper = 'David'.ToUpper) and (psSenha = '123') then
+  begin
+    UniSession.AddJS(
+      'FmePrincipal = document.getElementById(''FmePrincipal'');' + sLineBreak +
+      'FmePrincipal.contentWindow.location.replace(''/files/gentelella/production/index.html'');');
+  end
+  else
+  begin
+    UniSession.AddJS(
+      'new PNotify({' + sLineBreak +
+      '             title: ''Opa, algo deu errado!'',' + sLineBreak +
+      '             text: ''Não foi possível efetuar login. Verifique o usuário e senha informados!'',' + sLineBreak +
+      '             type: ''error'',' + sLineBreak +
+      '             styling: ''bootstrap3''' + sLineBreak +
+      '                              });');
+  end;
 end;
 
-procedure TMainForm.UniLabel1AjaxEvent(Sender: TComponent; EventName: string;
+procedure TMainForm.LbFmePrincipalAjaxEvent(Sender: TComponent; EventName: string;
   Params: TUniStrings);
 begin
-  ShowMessage('Mensagem Delphi');
+//  ShowMessage('Mensagem Delphi');
+  if EventName = 'EfetuarLogin' then
+  begin
+    EfetuarLogin(Params.Values['psLogin'], Params.Values['psSenha']);
+  end;
+
+
+//  UniSession.Query
 //window.ajaxRequest(MainForm.UniHTMLFrame1, 'myclickevent', [], false);
 //window.ajaxRequest(MainForm.UniLabel1, 'myclickevent', [], false);
 

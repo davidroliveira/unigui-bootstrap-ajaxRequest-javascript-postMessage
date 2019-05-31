@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Extra SAD | </title>
+    <title>Extra SAD</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,14 +33,13 @@
             <form>
               <h1>Efetuar Login</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Usuário" required="" />
+                <input id="EdtLogin" type="text" class="form-control" placeholder="Usuário" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Senha" required="" />
+                <input id="EdtSenha" type="password" class="form-control" placeholder="Senha" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Entrar</a>
-				<a class="btn btn-default submit" onclick="console.log('Teste 2'); console.log(window.parent); window.ajaxRequest(MainForm.UniLabel1, 'myclickevent', [], false);">Teste Ajax</a>
+				<a class="btn btn-default submit" onclick="parent.postMessage('EfetuarLogin', '*');">Entrar</a>
                 <a class="reset_pass" href="#">Esqueceu sua senha?</a>
               </div>
 
